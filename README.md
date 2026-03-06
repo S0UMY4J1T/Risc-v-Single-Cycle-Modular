@@ -90,7 +90,7 @@ Risc-v-Single-Cycle-Modular
 ## Tools Used
 
 - **Verilog HDL**
-- **ModelSim **
+- **ModelSim**
 
 ---
 

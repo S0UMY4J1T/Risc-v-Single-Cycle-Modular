@@ -1,0 +1,19 @@
+module RiscV_CPU #(
+    parameter ADDRESS_BUS_WIDTH = 5,
+    parameter DATA_BUS_WIDTH    = 32
+) (
+    input                         clk, reset,
+    input  [DATA_BUS_WIDTH-1 : 0] Instr, RD_DataMem,
+    output                        WE ,
+    output [DATA_BUS_WIDTH-1 : 0] PC , ALUResult, WD_DataMem
+);
+
+    wire [2:0] ALUControl ;
+    wire [1:0] ResultSrc, ImmSrc ;
+    wire RegWrite, WE, Zero, ALUSrc, PCSrc ;
+
+    Control_Path name1 (Zero, Instr[30], Instr[14:12], Instr[6:0], RegWrite, WE, ALUSrc, PCSrc, ResultSrc, ImmSrc, ALUControl);
+    Data_Path name2 (clk, reset, RegWrite, ALUSrc, PCSrc, ResultSrc, ImmSrc, ALUControl, Instr, RD_DataMem, Zero, PC, ALUResult, WD_DataMem);
+
+    
+endmodule

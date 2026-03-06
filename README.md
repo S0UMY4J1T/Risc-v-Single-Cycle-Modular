@@ -141,6 +141,9 @@ IIT (ISM) Dhanbad
 GitHub:  
 https://github.com/S0UMY4J1T
 
+LinkedIn:  
+https://www.linkedin.com/in/soumyajit-samanta
+
 ---
 
 ## Project Motivation
